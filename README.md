@@ -6,25 +6,30 @@
 
 [![macOS](https://img.shields.io/badge/macOS-13%2B-000000?logo=apple)](https://www.apple.com/macos/)
 [![Shell](https://img.shields.io/badge/Shell-Zsh-89e051)](https://www.zsh.org/)
+[![License](https://img.shields.io/badge/License-MIT-22c55e.svg)](LICENSE)
 [![Repo](https://img.shields.io/badge/GitHub-SmartMur%2Fdotfiles-181717?logo=github)](https://github.com/SmartMur/dotfiles)
 
-Production-ready macOS terminal dotfiles with a reproducible install script, safe backups, and iTerm2 profile/theme setup.
+Production-ready macOS terminal dotfiles with reproducible setup, safe backups, Homebrew package management, and iTerm2 profile/theme automation.
+
+![Terminal Preview](assets/images/terminal-preview.svg)
 
 ## Overview
 
-This repo captures your terminal personalization so it can be reapplied on any fresh Mac quickly and consistently.
+This repository captures your preferred terminal environment so it can be applied consistently on any Mac.
 
-- Uses symlink-based dotfile management
-- Backs up existing local config before changes
-- Installs required CLI tooling via Homebrew (`Brewfile`)
-- Configures Starship prompt and iTerm2 profile/theme
-- Keeps secrets out of version control
+- Symlink-based dotfile management
+- Automatic backup of previous local configuration
+- Homebrew dependency installation from `Brewfile`
+- Starship prompt and iTerm2 profile/theme setup
+- Clear separation of secrets from version-controlled files
 
 ## Repo Structure
 
 ```text
 .
 ├── Brewfile
+├── LICENSE
+├── bootstrap.sh
 ├── install.sh
 ├── assets/images/
 ├── config/.config/
@@ -45,6 +50,7 @@ This repo captures your terminal personalization so it can be reapplied on any f
 - `zsh` (default on macOS)
 - Xcode Command Line Tools
 - Homebrew
+- Git
 
 ## Quick Start
 
@@ -55,37 +61,24 @@ cd mac-terminal-dotfiles
 exec zsh
 ```
 
-## Fresh macOS Bootstrap
+## One-Line Bootstrap (Fresh Machine)
 
-1. Install Xcode Command Line Tools:
 ```bash
-xcode-select --install
-```
-2. Install Homebrew:
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-3. Clone and install:
-```bash
-git clone https://github.com/SmartMur/dotfiles.git mac-terminal-dotfiles
-cd mac-terminal-dotfiles
-./install.sh
-```
-4. Reload shell:
-```bash
-exec zsh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/SmartMur/dotfiles/main/bootstrap.sh)"
 ```
 
-## What `install.sh` does
+The bootstrap script installs prerequisites if needed, clones this repo into `~/.smartmur-dotfiles`, and runs `install.sh`.
+
+## What `install.sh` Does
 
 - Creates timestamped backups in `~/.terminal_backups/mac-terminal-dotfiles-<timestamp>/`
 - Symlinks repo-managed files into `~/.zsh*`, `~/.config/*`, and iTerm2 Dynamic Profiles
 - Sets the iTerm2 default profile GUID to the SmartMur profile
-- Runs `brew bundle --file Brewfile` (unless `--skip-brew` is set)
+- Runs `brew bundle --file Brewfile` unless `--skip-brew` is passed
 
 ## iTerm2 and Branding
 
-- Dynamic profile installed at:
+- Dynamic profile location:
   - `~/Library/Application Support/iTerm2/DynamicProfiles/christianlempa.dynamic.json`
 - Additional profile assets:
   - `~/.config/iterm2/christianlempa.itermcolors`
@@ -98,12 +91,12 @@ Brand assets copied from `https://smartmur.ca` on February 18, 2026:
 
 ## Customization
 
-- Main shell behavior: `zsh/.zshrc`
+- Core shell behavior: `zsh/.zshrc`
 - Aliases/functions modules: `zsh/.zsh/*`
-- Prompt design: `config/.config/starship.christianlempa.toml`
+- Prompt style: `config/.config/starship.christianlempa.toml`
 - Package list: `Brewfile`
 
-After changing repo files, re-run:
+After changing files in this repo:
 
 ```bash
 ./install.sh --skip-brew
@@ -112,9 +105,9 @@ exec zsh
 
 ## Secrets and Security
 
-Never commit API keys/tokens.
+Never commit API keys or tokens.
 
-Use local-only file:
+Use a local-only file:
 
 - `~/.zsh/secrets.zsh`
 
@@ -126,10 +119,10 @@ export OPENAI_API_KEY="..."
 
 ## Troubleshooting
 
-- If prompt/theme does not update: run `exec zsh`
-- If iTerm2 profile does not switch: restart iTerm2 and open a new window
-- If brew packages are missing: run `brew bundle --file Brewfile`
-- If you need to rollback: restore files from `~/.terminal_backups/...`
+- Prompt/theme not updating: run `exec zsh`
+- iTerm2 profile not switching: restart iTerm2 and open a new window
+- Missing packages: run `brew bundle --file Brewfile`
+- Rollback required: restore files from `~/.terminal_backups/...`
 
 ## Maintenance Workflow
 
@@ -143,18 +136,12 @@ exec zsh
 
 Issues and pull requests are welcome.
 
-For config changes, include:
+When proposing changes, include:
 
 - what changed
 - why it changed
 - how it was tested on macOS
 
-## Roadmap
-
-- Add optional WezTerm profile support
-- Add non-interactive CI checks for shell/script syntax
-- Add screenshot previews for prompt/theme states
-
 ## License
 
-No license file is currently defined. Add a `LICENSE` file before broad reuse outside your personal/team workflow.
+MIT License. See `LICENSE`.
