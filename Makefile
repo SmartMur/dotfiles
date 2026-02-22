@@ -1,4 +1,4 @@
-.PHONY: install bootstrap lint security check
+.PHONY: install bootstrap lint security hooks precommit check
 
 install:
 	./install.sh
@@ -13,4 +13,10 @@ lint:
 security:
 	python3 scripts/security_scrub.py
 
-check: lint security
+hooks:
+	pre-commit install
+
+precommit:
+	pre-commit run --all-files
+
+check: lint security precommit

@@ -10,11 +10,19 @@ cd dotfiles
 ./install.sh --skip-brew
 ```
 
+Install local hooks once:
+
+```bash
+brew install pre-commit
+pre-commit install
+```
+
 ## Required Checks Before PR
 
 ```bash
 bash -n bootstrap.sh
 bash -n install.sh
+pre-commit run --all-files
 python3 scripts/security_scrub.py --no-history
 ```
 

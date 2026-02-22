@@ -31,11 +31,11 @@ alias reload-zsh='exec zsh'
 alias edit-zsh='$EDITOR ~/.zshrc'
 alias python='python3'
 
-# ChristianLempa-inspired modular files
-[[ -f ~/.zsh/aliases.christianlempa.zsh ]] && source ~/.zsh/aliases.christianlempa.zsh
-[[ -f ~/.zsh/functions.christianlempa.zsh ]] && source ~/.zsh/functions.christianlempa.zsh
-[[ -f ~/.zsh/nvm.christianlempa.zsh ]] && source ~/.zsh/nvm.christianlempa.zsh
-[[ -f ~/.zsh/starship.christianlempa.zsh ]] && source ~/.zsh/starship.christianlempa.zsh
+# SmartMur-inspired modular files
+[[ -f ~/.zsh/aliases.smartmur.zsh ]] && source ~/.zsh/aliases.smartmur.zsh
+[[ -f ~/.zsh/functions.smartmur.zsh ]] && source ~/.zsh/functions.smartmur.zsh
+[[ -f ~/.zsh/nvm.smartmur.zsh ]] && source ~/.zsh/nvm.smartmur.zsh
+[[ -f ~/.zsh/starship.smartmur.zsh ]] && source ~/.zsh/starship.smartmur.zsh
 
 # Optional PATH additions used by this setup
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
@@ -64,7 +64,7 @@ fi
 
 # Prompt
 if [[ -o interactive ]] && [[ "$TERM" != "dumb" ]] && command -v starship >/dev/null 2>&1; then
-  export STARSHIP_CONFIG="$HOME/.config/starship.christianlempa.toml"
+  export STARSHIP_CONFIG="$HOME/.config/starship.smartmur.toml"
   eval "$(starship init zsh)"
 fi
 

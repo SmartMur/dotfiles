@@ -38,8 +38,11 @@ exec zsh
 ## Validation
 
 ```bash
+brew install pre-commit
+pre-commit install
 bash -n bootstrap.sh
 bash -n install.sh
+pre-commit run --all-files
 python3 scripts/security_scrub.py --no-history
 ```
 

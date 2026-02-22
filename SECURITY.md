@@ -33,6 +33,7 @@ If a secret is exposed:
 2. Remove secret from current branch.
 3. Rewrite history if needed.
 4. Re-run:
+   - `pre-commit run --all-files`
    - `python3 scripts/security_scrub.py`
    - `bash -n bootstrap.sh`
    - `bash -n install.sh`
@@ -42,6 +43,7 @@ Use `docs/SECURITY_RULEBOOK.md` for command-level incident steps.
 
 ## Baseline Security Checks
 
+- `pre-commit run --all-files`
 - `scripts/security_scrub.py`
 - `bash -n bootstrap.sh`
 - `bash -n install.sh`

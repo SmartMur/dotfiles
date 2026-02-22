@@ -12,15 +12,16 @@
 [![Shell](https://img.shields.io/badge/Shell-Zsh-89e051)](https://www.zsh.org/)
 [![License](https://img.shields.io/badge/License-MIT-22c55e.svg)](LICENSE)
 [![Repo](https://img.shields.io/badge/GitHub-SmartMur%2Fdotfiles-181717?logo=github)](https://github.com/SmartMur/dotfiles)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-1f6feb?logo=pre-commit)](https://pre-commit.com/)
 
 Production-ready macOS terminal dotfiles with reproducible setup, safe backups, Homebrew package management, and iTerm2 profile/theme automation.
 
 ![Terminal Preview](assets/images/terminal-preview.svg)
 
-Start here: `docs/GETTING_STARTED.md`  
-Contributing: `CONTRIBUTING.md`  
-Security policy: `SECURITY.md`  
-Security rulebook: `docs/SECURITY_RULEBOOK.md`  
+Start here: `docs/GETTING_STARTED.md`
+Contributing: `CONTRIBUTING.md`
+Security policy: `SECURITY.md`
+Security rulebook: `docs/SECURITY_RULEBOOK.md`
 Roadmap: `ROADMAP.md`
 
 ## Overview
@@ -44,14 +45,14 @@ This repository captures your preferred terminal environment so it can be applie
 ├── assets/images/
 ├── config/.config/
 │   ├── iterm2/
-│   └── starship.christianlempa.toml
+│   └── starship.smartmur.toml
 └── zsh/
     ├── .zshrc
     └── .zsh/
-        ├── aliases.christianlempa.zsh
-        ├── functions.christianlempa.zsh
-        ├── nvm.christianlempa.zsh
-        └── starship.christianlempa.zsh
+        ├── aliases.smartmur.zsh
+        ├── functions.smartmur.zsh
+        ├── nvm.smartmur.zsh
+        └── starship.smartmur.zsh
 ```
 
 ## Requirements
@@ -80,10 +81,18 @@ exec zsh
 ```bash
 bash -n bootstrap.sh
 bash -n install.sh
+pre-commit run --all-files
 python3 scripts/security_scrub.py
 ```
 
 If a leak is detected, stop and follow `docs/SECURITY_RULEBOOK.md` before any push.
+
+Install hooks once per clone:
+
+```bash
+brew install pre-commit
+pre-commit install
+```
 
 ## Dependabot PR Automation
 
@@ -111,10 +120,10 @@ The bootstrap script installs prerequisites if needed, clones this repo into `~/
 ## iTerm2 and Branding
 
 - Dynamic profile location:
-  - `~/Library/Application Support/iTerm2/DynamicProfiles/christianlempa.dynamic.json`
+  - `~/Library/Application Support/iTerm2/DynamicProfiles/smartmur.dynamic.json`
 - Additional profile assets:
-  - `~/.config/iterm2/christianlempa.itermcolors`
-  - `~/.config/iterm2/christianlempa-profile.json`
+  - `~/.config/iterm2/smartmur.itermcolors`
+  - `~/.config/iterm2/smartmur-profile.json`
 
 Brand assets copied from `https://smartmur.ca` on February 18, 2026:
 
@@ -125,7 +134,7 @@ Brand assets copied from `https://smartmur.ca` on February 18, 2026:
 
 - Core shell behavior: `zsh/.zshrc`
 - Aliases/functions modules: `zsh/.zsh/*`
-- Prompt style: `config/.config/starship.christianlempa.toml`
+- Prompt style: `config/.config/starship.smartmur.toml`
 - Package list: `Brewfile`
 
 After changing files in this repo:

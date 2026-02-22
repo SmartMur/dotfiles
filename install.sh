@@ -62,17 +62,17 @@ backup_and_link() {
 
 # Dotfiles
 backup_and_link "$REPO_ROOT/zsh/.zshrc" "$HOME/.zshrc"
-backup_and_link "$REPO_ROOT/zsh/.zsh/aliases.christianlempa.zsh" "$HOME/.zsh/aliases.christianlempa.zsh"
-backup_and_link "$REPO_ROOT/zsh/.zsh/functions.christianlempa.zsh" "$HOME/.zsh/functions.christianlempa.zsh"
-backup_and_link "$REPO_ROOT/zsh/.zsh/nvm.christianlempa.zsh" "$HOME/.zsh/nvm.christianlempa.zsh"
-backup_and_link "$REPO_ROOT/zsh/.zsh/starship.christianlempa.zsh" "$HOME/.zsh/starship.christianlempa.zsh"
-backup_and_link "$REPO_ROOT/config/.config/starship.christianlempa.toml" "$HOME/.config/starship.christianlempa.toml"
-backup_and_link "$REPO_ROOT/config/.config/iterm2/christianlempa.itermcolors" "$HOME/.config/iterm2/christianlempa.itermcolors"
-backup_and_link "$REPO_ROOT/config/.config/iterm2/christianlempa-profile.json" "$HOME/.config/iterm2/christianlempa-profile.json"
-backup_and_link "$REPO_ROOT/config/.config/iterm2/christianlempa.dynamic.json" "$HOME/Library/Application Support/iTerm2/DynamicProfiles/christianlempa.dynamic.json"
+backup_and_link "$REPO_ROOT/zsh/.zsh/aliases.smartmur.zsh" "$HOME/.zsh/aliases.smartmur.zsh"
+backup_and_link "$REPO_ROOT/zsh/.zsh/functions.smartmur.zsh" "$HOME/.zsh/functions.smartmur.zsh"
+backup_and_link "$REPO_ROOT/zsh/.zsh/nvm.smartmur.zsh" "$HOME/.zsh/nvm.smartmur.zsh"
+backup_and_link "$REPO_ROOT/zsh/.zsh/starship.smartmur.zsh" "$HOME/.zsh/starship.smartmur.zsh"
+backup_and_link "$REPO_ROOT/config/.config/starship.smartmur.toml" "$HOME/.config/starship.smartmur.toml"
+backup_and_link "$REPO_ROOT/config/.config/iterm2/smartmur.itermcolors" "$HOME/.config/iterm2/smartmur.itermcolors"
+backup_and_link "$REPO_ROOT/config/.config/iterm2/smartmur-profile.json" "$HOME/.config/iterm2/smartmur-profile.json"
+backup_and_link "$REPO_ROOT/config/.config/iterm2/smartmur.dynamic.json" "$HOME/Library/Application Support/iTerm2/DynamicProfiles/smartmur.dynamic.json"
 
 # iTerm2 default profile
-DYN_PROFILE="$HOME/Library/Application Support/iTerm2/DynamicProfiles/christianlempa.dynamic.json"
+DYN_PROFILE="$HOME/Library/Application Support/iTerm2/DynamicProfiles/smartmur.dynamic.json"
 if [[ -f "$DYN_PROFILE" ]]; then
   PROFILE_GUID="$(plutil -extract Profiles.0.Guid raw -o - "$DYN_PROFILE" 2>/dev/null || true)"
   if [[ -n "$PROFILE_GUID" ]]; then

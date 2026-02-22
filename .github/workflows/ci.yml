@@ -13,6 +13,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.x"
+
+      - name: Install pre-commit
+        run: python -m pip install --upgrade pip pre-commit
+
+      - name: Pre-commit checks
+        run: pre-commit run --all-files --show-diff-on-failure
+
       - name: Shell syntax checks
         run: |
           bash -n bootstrap.sh

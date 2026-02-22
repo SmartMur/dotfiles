@@ -23,6 +23,7 @@ This rulebook defines mandatory security workflow for this dotfiles repository.
    - `CHANGE_ME_*`
    - `${ENV_VAR}`
 4. Required local checks before push:
+   - `pre-commit run --all-files`
    - `bash -n bootstrap.sh`
    - `bash -n install.sh`
    - `python3 scripts/security_scrub.py --no-history`
@@ -44,6 +45,7 @@ This rulebook defines mandatory security workflow for this dotfiles repository.
 
 ```bash
 git status
+pre-commit run --all-files
 bash -n bootstrap.sh
 bash -n install.sh
 python3 scripts/security_scrub.py --no-history
@@ -52,6 +54,7 @@ python3 scripts/security_scrub.py --no-history
 ### Before push
 
 ```bash
+pre-commit run --all-files
 bash -n bootstrap.sh
 bash -n install.sh
 python3 scripts/security_scrub.py
@@ -122,6 +125,7 @@ git reset --hard origin/main
 
 ```bash
 # Quick local gate
+pre-commit run --all-files
 bash -n bootstrap.sh
 bash -n install.sh
 python3 scripts/security_scrub.py --no-history
