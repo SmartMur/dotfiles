@@ -85,6 +85,14 @@ python3 scripts/security_scrub.py
 
 If a leak is detected, stop and follow `docs/SECURITY_RULEBOOK.md` before any push.
 
+## Dependabot PR Automation
+
+Dependabot PRs are auto-managed by:
+
+- `.github/workflows/dependabot-automerge.yml`
+
+It updates branches, auto-approves bot PRs, and enables auto-merge after CI passes.
+
 ## One-Line Bootstrap (Fresh Machine)
 
 ```bash
