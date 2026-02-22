@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  shell-and-security:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Shell syntax checks
+        run: |
+          bash -n bootstrap.sh
+          bash -n install.sh
+
+      - name: Security scrub (working tree)
+        run: python3 scripts/security_scrub.py --no-history

@@ -2,6 +2,10 @@
   <img src="assets/images/smartmur-favicon.png" alt="SmartMur" width="84" />
 </p>
 
+<p align="center">
+  <img src="assets/graphics/hero.svg" alt="SmartMur dotfiles banner" width="100%" />
+</p>
+
 # SmartMur Dotfiles (macOS Terminal)
 
 [![macOS](https://img.shields.io/badge/macOS-13%2B-000000?logo=apple)](https://www.apple.com/macos/)
@@ -12,6 +16,11 @@
 Production-ready macOS terminal dotfiles with reproducible setup, safe backups, Homebrew package management, and iTerm2 profile/theme automation.
 
 ![Terminal Preview](assets/images/terminal-preview.svg)
+
+Start here: `docs/GETTING_STARTED.md`  
+Contributing: `CONTRIBUTING.md`  
+Security policy: `SECURITY.md`  
+Roadmap: `ROADMAP.md`
 
 ## Overview
 
@@ -59,6 +68,18 @@ git clone https://github.com/SmartMur/dotfiles.git mac-terminal-dotfiles
 cd mac-terminal-dotfiles
 ./install.sh
 exec zsh
+```
+
+<p align="center">
+  <img src="assets/graphics/flow.svg" alt="Dotfiles setup flow" width="100%" />
+</p>
+
+## Professional Checks (Before Push)
+
+```bash
+bash -n bootstrap.sh
+bash -n install.sh
+python3 scripts/security_scrub.py
 ```
 
 ## One-Line Bootstrap (Fresh Machine)
@@ -134,13 +155,7 @@ exec zsh
 
 ## Contributing
 
-Issues and pull requests are welcome.
-
-When proposing changes, include:
-
-- what changed
-- why it changed
-- how it was tested on macOS
+See `CONTRIBUTING.md`.
 
 ## License
 

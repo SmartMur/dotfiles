@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="280" viewBox="0 0 1100 280" role="img" aria-label="Dotfiles setup flow">
+  <rect width="1100" height="280" fill="#0b1220" rx="16"/>
+  <text x="550" y="42" fill="#e2e8f0" font-family="'Segoe UI', Arial, sans-serif" font-size="28" text-anchor="middle">Setup Flow</text>
+  <g font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#e2e8f0" text-anchor="middle">
+    <rect x="40" y="100" width="180" height="90" rx="12" fill="#1d4ed8"/>
+    <text x="130" y="153">Clone Repo</text>
+
+    <rect x="260" y="100" width="180" height="90" rx="12" fill="#2563eb"/>
+    <text x="350" y="153">Run Install</text>
+
+    <rect x="480" y="100" width="180" height="90" rx="12" fill="#0ea5e9"/>
+    <text x="570" y="153">Backup + Link</text>
+
+    <rect x="700" y="100" width="180" height="90" rx="12" fill="#22c55e"/>
+    <text x="790" y="153">Brew Bundle</text>
+
+    <rect x="920" y="100" width="140" height="90" rx="12" fill="#16a34a"/>
+    <text x="990" y="153">exec zsh</text>
+  </g>
+  <g stroke="#93c5fd" stroke-width="4" fill="none">
+    <path d="M220 145 L260 145"/>
+    <path d="M440 145 L480 145"/>
+    <path d="M660 145 L700 145"/>
+    <path d="M880 145 L920 145"/>
+  </g>
+  <g fill="#93c5fd">
+    <polygon points="256,139 266,145 256,151"/>
+    <polygon points="476,139 486,145 476,151"/>
+    <polygon points="696,139 706,145 696,151"/>
+    <polygon points="916,139 926,145 916,151"/>
+  </g>
+</svg>
