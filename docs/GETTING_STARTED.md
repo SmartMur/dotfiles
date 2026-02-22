@@ -42,3 +42,11 @@ bash -n bootstrap.sh
 bash -n install.sh
 python3 scripts/security_scrub.py --no-history
 ```
+
+For a full history scan before release:
+
+```bash
+python3 scripts/security_scrub.py
+```
+
+If any secret finding appears, follow `docs/SECURITY_RULEBOOK.md`.

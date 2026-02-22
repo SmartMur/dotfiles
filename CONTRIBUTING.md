@@ -18,6 +18,8 @@ bash -n install.sh
 python3 scripts/security_scrub.py --no-history
 ```
 
+For security-sensitive changes, also review `docs/SECURITY_RULEBOOK.md`.
+
 If you changed `Brewfile`, also verify:
 
 ```bash
@@ -30,6 +32,7 @@ brew bundle check --file Brewfile || true
 - Do not commit secrets, tokens, private keys, or machine-specific credentials.
 - Preserve backup-safe behavior in `install.sh`.
 - Document user-facing changes in `README.md` and `CHANGELOG.md`.
+- Follow `docs/SECURITY_RULEBOOK.md` incident flow if any leakage is detected.
 
 ## PR Checklist
 

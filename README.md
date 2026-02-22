@@ -20,6 +20,7 @@ Production-ready macOS terminal dotfiles with reproducible setup, safe backups, 
 Start here: `docs/GETTING_STARTED.md`  
 Contributing: `CONTRIBUTING.md`  
 Security policy: `SECURITY.md`  
+Security rulebook: `docs/SECURITY_RULEBOOK.md`  
 Roadmap: `ROADMAP.md`
 
 ## Overview
@@ -82,6 +83,8 @@ bash -n install.sh
 python3 scripts/security_scrub.py
 ```
 
+If a leak is detected, stop and follow `docs/SECURITY_RULEBOOK.md` before any push.
+
 ## One-Line Bootstrap (Fresh Machine)
 
 ```bash
@@ -137,6 +140,8 @@ Example:
 ```bash
 export OPENAI_API_KEY="..."
 ```
+
+Incident and history-rewrite procedure is documented in `docs/SECURITY_RULEBOOK.md`.
 
 ## Troubleshooting
 
